@@ -1,0 +1,220 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Hero Start -->
+<div class="container-fluid bg-primary hero-header py-5 mb-4">
+    <div class="container py-5">
+        <div class="row align-items-center py-4">
+            <div class="col-lg-6 text-center text-lg-start">
+                <h1 class="display-5 text-white mb-3 animated slideInRight">
+                    Beatie intelligent driven delivery for your business
+                </h1>
+                <p class="text-white mb-3 animated slideInRight">
+                    Beatie is business to business delivery for small to medium enterprise.
+                </p>
+                <a href="#" class="btn btn-light py-2 px-4 rounded-pill me-2 animated slideInRight">Read More</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-outline-light py-2 px-4 rounded-pill animated slideInRight">Contact Us</a>
+            </div>
+
+            <div class="col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
+                <!-- optional hero image -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Hero End -->
+
+
+<!-- Full Screen Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background: rgba(20, 24, 62, 0.7);">
+            <div class="modal-header border-0">
+                <button type="button" class="btn-close bg-white btn-square" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center justify-content-center">
+                <form action="" method="post" class="w-100" style="max-width: 600px;" novalidate>
+                    {{ form.hidden_tag() }}
+                    <p>
+                        {{ form.search_term.label }}<br>
+                        {{ form.search_term(size=32) }}
+                        {% for error in form.search_term.errors %}
+                            <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                    <p>{{ form.submit() }}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Full Screen Search End -->
+
+
+<!-- About Start -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+
+            <div class="col-lg-6">
+                <img class="img-fluid rounded" src="static/img/about-img.jpg" alt="">
+            </div>
+
+            <div class="col-lg-6">
+                <h1 class="mb-3">When you require reliable and cost effective delivery</h1>
+                <p class="mb-3">Are you a small business looking for fast reliable and cost effective delivery?</p>
+                <p class="mb-3">Moving soon? Need assistance packing and vehicles to move your belongings.</p>
+
+                <div class="row g-2">
+                    <div class="col-sm-6">
+                        <h6><i class="fa fa-check text-primary me-2"></i>Professional Staff</h6>
+                        <h6><i class="fa fa-check text-primary me-2"></i>1 Tonne Bakkie and Trailer</h6>
+                    </div>
+                    <div class="col-sm-6">
+                        <h6><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
+                        <h6><i class="fa fa-check text-primary me-2"></i>Fair Prices</h6>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- About End -->
+
+
+<!-- Service Start -->
+<div class="container-fluid bg-light py-5 mt-4">
+    <div class="container py-4">
+
+        <div class="row g-4 align-items-start mb-3">
+            <div class="col-lg-5">
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-2">Beatie Services</div>
+                <h1 class="mb-3">Business to business and individual delivery solutions</h1>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <!-- Service Box 1 -->
+            <div class="col-md-6">
+                <div class="service-item text-center rounded p-4 h-100">
+                    <div class="service-icon btn-square mb-3">
+                        <i class="fa fa-robot fa-2x"></i>
+                    </div>
+                    <h5 class="mb-2">Personalised and Professional Delivery Services</h5>
+                    <p>Efficient, cost-effective and fast collection of stock and delivery to your clients.</p>
+                </div>
+            </div>
+
+            <!-- Service Box 2 -->
+            <div class="col-md-6">
+                <div class="service-item text-center rounded p-4 h-100">
+                    <div class="service-icon btn-square mb-3">
+                        <i class="fa fa-power-off fa-2x"></i>
+                    </div>
+                    <h5 class="mb-2">Door to Door Deliveries</h5>
+                    <p>A hassle-free end-to-end delivery service that collects from you and delivers directly to your chosen destination.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Service End -->
+
+
+<!-- Feature Start -->
+<div class="container-fluid bg-primary feature pt-5 pb-4">
+    <div class="container pt-4 pb-2">
+        <div class="row g-4">
+
+            <div class="col-lg-6 text-white">
+                <div class="btn btn-sm border rounded-pill text-white px-3 mb-2">Why Choose Us</div>
+
+                <h1 class="text-white mb-3">
+                    Beatie aims to deliver a unique delivery service for business and individuals
+                </h1>
+
+                <p class="text-light mb-3">
+                    We deliver for business and individuals tailored to the needs of everyday customers.
+                </p>
+
+                <div class="d-flex align-items-center mb-2">
+                    <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <span>Beatie is committed to offering a unique, customer-focused delivery service</span>
+                </div>
+
+                <div class="d-flex align-items-center mb-4">
+                    <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
+                        <i class="fa fa-check"></i>
+                    </div>
+                    <span>We deliver uniquely — with speed, care and convenience</span>
+                </div>
+
+                <div class="row g-3">
+                    <div class="col-sm-6">
+                        <div class="d-flex rounded p-3" style="background: rgba(255,255,255,0.1);">
+                            <i class="fa fa-users fa-3x text-white"></i>
+                            <div class="ms-3">
+                                <h2 class="text-white mb-0">15</h2>
+                                <p class="text-white mb-0">Happy Clients</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="d-flex rounded p-3" style="background: rgba(255,255,255,0.1);">
+                            <i class="fa fa-check fa-3x text-white"></i>
+                            <div class="ms-3">
+                                <h2 class="text-white mb-0">22</h2>
+                                <p class="text-white mb-0">Project Complete</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-lg-6 text-center text-md-end">
+                <img class="img-fluid" src="static/img/feature.png" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Feature End -->
+
+
+<!-- Newsletter Start -->
+<div class="container-fluid bg-primary newsletter py-5">
+    <div class="container">
+        <div class="row g-4 align-items-center">
+
+            <div class="col-md-5 text-start">
+                <img class="img-fluid" src="static/img/newsletter.png" alt="">
+            </div>
+
+            <div class="col-md-7 newsletter-text">
+                <div class="btn btn-sm border rounded-pill text-white px-3 mb-2">Newsletter</div>
+
+                <h1 class="text-white mb-3">Subscribe to the newsletter</h1>
+
+                <div class="position-relative w-100 mt-2 mb-2">
+                    <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5"
+                           type="text" placeholder="Enter Your Email" style="height: 48px;">
+                    <button class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2">
+                        <i class="fa fa-paper-plane text-primary fs-4"></i>
+                    </button>
+                </div>
+
+                <small class="text-white-50">Stay in the loop with our news and updates</small>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Newsletter End -->
+
+{% endblock %}

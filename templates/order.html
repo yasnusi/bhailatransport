@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h2>No Obligation Estimate Cost Calculator</h2>
+
+      <form method="POST">
+        {{ form.hidden_tag() }}
+
+        <div class="mb-3">
+          {{ form.pickup.label(class="form-label") }}
+          {{ form.pickup(class="form-control", placeholder="Pickup address") }}
+        </div>
+
+        <div class="mb-3">
+          {{ form.dropoff.label(class="form-label") }}
+          {{ form.dropoff(class="form-control", placeholder="Drop-off address") }}
+        </div>
+
+        <div class="d-grid mb-3">
+          {{ form.submit(class="btn btn-primary") }}
+        </div>
+      </form>
+
+      {% if distance is not none and cost is not none %}
+      <div class="alert alert-success">
+        <p>Distance (with extra buffer): <strong>{{ distance }} km</strong></p>
+        <p>Estimated delivery cost: <strong>R{{ cost }}</strong></p>
+        <small class="text-muted">
+          This is a cost estimate for information purposes only. We at Beatie accept no responsibility for the estimate as actual distances, delivery times, and values may vary depending on traffic, route, or weight of items.
+        </small>
+      </div>
+      {% endif %}
+
+    </div>
+  </div>
+</div>
+{% endblock %}
